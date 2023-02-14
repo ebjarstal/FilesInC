@@ -7,14 +7,15 @@
 
 #include "myfilelib.h"
 
+// reads file and prints it line by line
 void printFile(const char file_path[]) {
     
-    FILE *file = NULL;
+    FILE *file = NULL;  // initialize pointer to file
     file = fopen(file_path, "r");
     char line[MAX_SIZE] = "";
     
     if (file != NULL) {
-        while (fgets(line, MAX_SIZE, file) != NULL) {
+        while (fgets(line, MAX_SIZE, file) != NULL) {  // while end of file not reached, print line
             printf("%s", line);
         }
         printf("\n");
